@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.html
+*.png
+*.jpg
+*.jpeg
+
+# Streamlit
+.streamlit/
+
+# Test files
+test_*.py
+*_test.py
