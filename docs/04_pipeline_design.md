@@ -124,10 +124,16 @@ justification: str
 
 **Output Schema:**  
 ```python
-encodings: Dict[str, EncodingSpec]
+EncodingsValue = Union[
+    EncodingSpec,
+    List[EncodingSpec],        # e.g., tooltip arrays
+    Dict[str, Any],            # passthrough for advanced configs
+    List[Dict[str, Any]],
+]
+encodings: Dict[str, EncodingsValue]
 ```
 
-Note: Sort directives (e.g., `y desc`) are handled inside encoding specifications, consistent with Vega-Lite grammar.
+Note: Sort directives (e.g., `y desc`) are handled inside encoding specifications, consistent with Vega-Lite grammar. Tooltip arrays (lists of EncodingSpec) are explicitly supported to match Vega-Lite semantics.
 
 ---
 
@@ -380,3 +386,25 @@ Reasons for this design:
 - Altair offers a clean Python API while preserving full Vega-Lite expressiveness.
 - Full dataset never goes into the LLM—preserves privacy and avoids token explosion.
 - Deterministic rendering via Vega-Lite ensures correctness and reproducibility.
+
+# 14. Future Evolution: JSON-Editable Steps & LangGraph Orchestration
+
+In the current implementation, the 6-step Prompt-to-Vis pipeline is executed
+as a simple sequential Python workflow:
+
+1 → 2 → 3 → 4 → 5 → 6
+
+This is sufficient for our MVP and for the course requirements.
+
+However, once we introduce JSON-editable step panels in the UI
+(e.g., the user edits the output of Step 3 and wants to re-run the pipeline
+from Step 3 onward), we plan to evolve the backend into a LangGraph-based
+orchestrator:
+
+- Each Step (1–6) becomes a node in the graph.
+- `PipelineState` is used as the shared state object between nodes.
+- The graph allows us to re-run the pipeline starting from an arbitrary node
+  (e.g., "step3") without recomputing earlier steps.
+
+This evolution is deliberately postponed until the JSON-editable UI is in place,
+so that we can keep the MVP backend as simple and debuggable as possible.
