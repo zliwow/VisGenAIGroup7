@@ -304,7 +304,11 @@ Sort directives belong inside encodings.
   "encodings": {
     "x": {"field": "Major Genre", "type": "nominal"},
     "y": {"field": "IMDB Rating", "aggregate": "mean", "type": "quantitative"},
-    "color": {"field": "Major Genre", "type": "nominal", "legend": true}
+    "color": {"field": "Major Genre", "type": "nominal", "legend": true},
+    "tooltip": [
+      {"field": "Major Genre", "type": "nominal"},
+      {"field": "IMDB Rating", "aggregate": "mean", "type": "quantitative"}
+    ]
   },
   "reasoning": "..."
 }
