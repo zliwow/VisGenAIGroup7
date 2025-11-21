@@ -50,11 +50,17 @@ def build_dataset_info(df: pd.DataFrame, name: Optional[str] = None) -> DatasetI
         inferred = _infer_field_type(df[col].dtype)
         example_values = df[col].dropna().unique()[:3].tolist()
 
+        # Detect if this is an integer-valued quantitative field
+        is_integer = None
+        if inferred == "quantitative" and pd.api.types.is_integer_dtype(df[col].dtype):
+            is_integer = True
+
         fields.append(
             DatasetField(
                 name=col,
                 inferred_type=inferred,
                 example_values=example_values,
+                is_integer=is_integer,
             )
         )
 

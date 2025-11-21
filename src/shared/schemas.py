@@ -27,6 +27,7 @@ class DatasetField(BaseModel):
     inferred_type: Literal["quantitative", "categorical", "temporal", "unknown"]
     description: Optional[str] = None
     example_values: Optional[List[Any]] = None
+    is_integer: Optional[bool] = None  # True for integer-valued quantitative fields
 
 
 class DatasetInfo(BaseModel):
