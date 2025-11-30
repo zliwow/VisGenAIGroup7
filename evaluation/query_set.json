@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Q1",
+    "query": "Use a horizontal bar chart to show the number of movies in each genre, sorted from lowest to highest count.",
+    "dataset": "imdb_sample",
+    "expected_mark": "bar"
+  },
+  {
+    "id": "Q2",
+    "query": "Use a line chart to show the average rating by year.",
+    "dataset": "imdb_sample",
+    "expected_mark": "line"
+  },
+  {
+    "id": "Q3",
+    "query": "Use a point chart to show the relationship between Runtime (Minutes) and Rating.",
+    "dataset": "imdb_sample",
+    "expected_mark": "point"
+  },
+  {
+    "id": "Q4",
+    "query": "Use an area chart to show how the total number of movies released each year has changed over time.",
+    "dataset": "imdb_sample",
+    "expected_mark": "area"
+  },
+  {
+    "id": "Q5",
+    "query": "Use a rect (heatmap) to show the average rating for each combination of Genre and Year.",
+    "dataset": "imdb_sample",
+    "expected_mark": "rect"
+  },
+  {
+    "id": "Q6",
+    "query": "Use an arc chart to show the share of movies by genre.",
+    "dataset": "imdb_sample",
+    "expected_mark": "arc"
+  },
+  {
+    "id": "Q7",
+    "query": "Use a boxplot to show the distribution of movie ratings for each genre.",
+    "dataset": "imdb_sample",
+    "expected_mark": "boxplot"
+  },
+  {
+    "id": "Q8",
+    "query": "Use a bar chart to show the total revenue for each genre, sorted from highest to lowest, including only movies released after 2000.",
+    "dataset": "imdb_sample",
+    "expected_mark": "bar"
+  },
+  {
+    "id": "Q9",
+    "query": "Use a point chart to show the relationship between Rating and Revenue (Millions).",
+    "dataset": "imdb_sample",
+    "expected_mark": "point"
+  },
+  {
+    "id": "Q10",
+    "query": "Use a line chart to show the number of movies released each year, with a separate line for each genre.",
+    "dataset": "imdb_sample",
+    "expected_mark": "line"
+  }
+]

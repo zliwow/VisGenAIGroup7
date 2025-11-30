@@ -1,0 +1,1520 @@
+{
+  "Q1": {
+    "step1": {
+      "selected_columns": [
+        "Genre"
+      ]
+    },
+    "step2": {
+      "intent": "distribution",
+      "target_columns": [
+        "Genre"
+      ],
+      "reasoning": "The user query aims to show the number of movies in each genre, which involves counting the occurrences of each category within the 'Genre' column. This task is best categorized under 'distribution' as it involves understanding how the data is spread across different categories. The focus is on the 'Genre' column to determine the distribution of movie counts across genres."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Genre",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "bar"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "count_Genre",
+          "type": "quantitative",
+          "aggregate": "count",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": "ascending",
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": "ascending",
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "count_Genre",
+            "type": "quantitative",
+            "aggregate": "count",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": {
+          "type": "bar",
+          "orient": "horizontal"
+        },
+        "encoding": {
+          "x": {
+            "field": "count_Genre",
+            "type": "quantitative",
+            "aggregate": "count",
+            "sort": "ascending"
+          },
+          "y": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": "ascending"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "count_Genre",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "count_Genre",
+            "type": "quantitative",
+            "aggregate": "count",
+            "sort": "ascending"
+          },
+          "y": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": "ascending"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "count_Genre",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        }
+      },
+      "sort": {
+        "order": "ascending"
+      }
+    }
+  },
+  "Q2": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Rating"
+      ]
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Rating"
+      ],
+      "reasoning": "The user query specifies the use of a line chart to show the average rating by year, which indicates an interest in observing how the average rating changes over time. This aligns with the 'trend' category, as trends are typically visualized using line charts to show changes over a temporal axis. The focus is on the 'Year' column as the temporal axis and the 'Rating' column as the quantitative measure to be averaged and plotted over time."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Rating",
+          "operation": "mean"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "line"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Rating",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "temporal"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative",
+              "aggregate": "mean"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "quantitative",
+            "axis": {
+              "format": "d"
+            }
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "quantitative",
+              "format": "d"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative",
+              "aggregate": "mean"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q3": {
+    "step1": {
+      "selected_columns": [
+        "Runtime (Minutes)",
+        "Rating"
+      ]
+    },
+    "step2": {
+      "intent": "correlation",
+      "target_columns": [
+        "Runtime (Minutes)",
+        "Rating"
+      ],
+      "reasoning": "The user query requests a point chart to show the relationship between 'Runtime (Minutes)' and 'Rating'. This indicates an interest in understanding how these two quantitative variables relate to each other, which aligns with the 'correlation' intent. The focus is on examining whether there is a pattern or association between the runtime of a movie and its rating."
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": []
+    },
+    "step4": {
+      "mark": "point"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Runtime (Minutes)",
+          "type": "quantitative",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Rating",
+          "type": "quantitative",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Runtime (Minutes)",
+            "type": "quantitative",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Runtime (Minutes)",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Runtime (Minutes)",
+              "type": "quantitative"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Runtime (Minutes)",
+            "type": "quantitative",
+            "axis": {
+              "format": "d"
+            }
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Runtime (Minutes)",
+              "type": "quantitative",
+              "format": "d"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q4": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Title"
+      ]
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Title"
+      ],
+      "reasoning": "The user query asks to show how the total number of movies released each year has changed over time, which indicates a focus on observing changes or patterns over a temporal axis. This aligns with the 'trend' analytical intent. The 'Year' column provides the temporal aspect, while the 'Title' column is used to count the number of movies released each year, as each title represents a unique movie entry. Therefore, the focus is on these columns to depict the trend of movie releases over time."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Title",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "area"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Title",
+          "type": "quantitative",
+          "aggregate": "count",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Title",
+            "type": "quantitative",
+            "aggregate": "count",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "area",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal"
+          },
+          "y": {
+            "aggregate": "count",
+            "field": "Title",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "temporal"
+            },
+            {
+              "aggregate": "count",
+              "field": "Title",
+              "type": "quantitative"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "area",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "quantitative",
+            "axis": {
+              "format": "d"
+            }
+          },
+          "y": {
+            "field": "Title",
+            "type": "quantitative",
+            "aggregate": "count"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "quantitative",
+              "format": "d"
+            },
+            {
+              "field": "Title",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q5": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Year",
+        "Rating"
+      ]
+    },
+    "step2": {
+      "intent": "compare",
+      "target_columns": [
+        "Genre",
+        "Year",
+        "Rating"
+      ],
+      "reasoning": "The user query asks for a heatmap to show the average rating for each combination of Genre and Year. This involves comparing the average ratings across different combinations of these two dimensions. The intent is 'compare' because the focus is on comparing the average ratings across different groups defined by Genre and Year. The target columns are 'Genre', 'Year', and 'Rating' as these are the columns involved in the comparison of average ratings."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Rating",
+          "operation": "mean"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre",
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "rect"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Year",
+          "type": "ordinal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "color": {
+          "field": "Rating",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Year",
+            "type": "ordinal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "rect",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Year",
+            "type": "ordinal"
+          },
+          "color": {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Year",
+              "type": "ordinal"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative",
+              "aggregate": "mean"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "rect",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Year",
+            "type": "ordinal",
+            "axis": {
+              "format": "d"
+            }
+          },
+          "color": {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": "mean"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Year",
+              "type": "ordinal",
+              "format": "d"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative",
+              "aggregate": "mean"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q6": {
+    "step1": {
+      "selected_columns": [
+        "Genre"
+      ]
+    },
+    "step2": {
+      "intent": "distribution",
+      "target_columns": [
+        "Genre"
+      ],
+      "reasoning": "The user query asks to show the share of movies by genre, which involves understanding how the movies are distributed across different genres. This aligns with the 'distribution' intent, as it focuses on the frequency or proportion of categories within a dataset. The 'Genre' column is the focus because it categorizes each movie, allowing us to calculate the share of each genre."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Genre",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "arc"
+    },
+    "step5": {
+      "encodings": {
+        "theta": {
+          "field": "Genre",
+          "type": "quantitative",
+          "aggregate": "count",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Genre",
+            "type": "quantitative",
+            "aggregate": "count",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "arc",
+        "encoding": {
+          "theta": {
+            "field": "Genre",
+            "type": "quantitative",
+            "aggregate": "count"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Genre",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "arc",
+        "encoding": {
+          "theta": {
+            "field": "Genre",
+            "type": "quantitative",
+            "aggregate": "count"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Genre",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q7": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Rating"
+      ]
+    },
+    "step2": {
+      "intent": "distribution",
+      "target_columns": [
+        "Genre",
+        "Rating"
+      ],
+      "reasoning": "The user query specifically asks for a boxplot to show the distribution of movie ratings for each genre. A boxplot is a visualization tool used to display the distribution of a dataset, particularly highlighting the median, quartiles, and potential outliers. The focus is on understanding how the 'Rating' values are distributed across different 'Genre' categories. Therefore, the analytical intent is 'distribution', and it focuses on the 'Genre' and 'Rating' columns."
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "boxplot"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Rating",
+          "type": "quantitative",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "boxplot",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "boxplot",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q8": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Year",
+        "Revenue (Millions)"
+      ]
+    },
+    "step2": {
+      "intent": "rank",
+      "target_columns": [
+        "Genre",
+        "Revenue (Millions)"
+      ],
+      "reasoning": "The user query asks for a bar chart showing the total revenue for each genre, sorted from highest to lowest. This indicates a ranking of genres based on their total revenue. The focus is on comparing the total revenue across different genres, which aligns with the 'rank' intent. The relevant columns are 'Genre' for categorization and 'Revenue (Millions)' for the quantitative measure to rank."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Revenue (Millions)",
+          "operation": "sum"
+        }
+      ],
+      "filters": [
+        {
+          "column": "Year",
+          "operator": ">",
+          "value": 2000
+        }
+      ],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "bar"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": "-y",
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Revenue (Millions)",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Revenue (Millions)",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "bar",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "transform": [
+          {
+            "filter": {
+              "field": "Year",
+              "gt": 2000
+            }
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": "-y"
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "type": "quantitative",
+            "aggregate": "sum"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Revenue (Millions)",
+              "type": "quantitative",
+              "aggregate": "sum"
+            }
+          ]
+        }
+      },
+      "final_spec": {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": "-y"
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "type": "quantitative",
+            "aggregate": "sum"
+          },
+          "tooltip": [
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Revenue (Millions)",
+              "type": "quantitative",
+              "aggregate": "sum"
+            }
+          ]
+        }
+      },
+      "sort": {
+        "field": "y",
+        "order": "descending"
+      }
+    }
+  },
+  "Q9": {
+    "step1": {
+      "selected_columns": [
+        "Rating",
+        "Revenue (Millions)"
+      ]
+    },
+    "step2": {
+      "intent": "correlation",
+      "target_columns": [
+        "Rating",
+        "Revenue (Millions)"
+      ],
+      "reasoning": "The user query requests a point chart to show the relationship between Rating and Revenue (Millions). This indicates an interest in understanding how these two quantitative variables relate to each other, which aligns with the 'correlation' intent. The focus is on examining whether there is a pattern or relationship between the movie ratings and their corresponding revenues."
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": []
+    },
+    "step4": {
+      "mark": "point"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Rating",
+          "type": "quantitative",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Revenue (Millions)",
+          "type": "quantitative",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Rating",
+            "type": "quantitative",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Revenue (Millions)",
+            "type": "quantitative",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            },
+            {
+              "field": "Revenue (Millions)",
+              "type": "quantitative"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Rating",
+              "type": "quantitative"
+            },
+            {
+              "field": "Revenue (Millions)",
+              "type": "quantitative"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  },
+  "Q10": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Genre"
+      ]
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Genre"
+      ],
+      "reasoning": "The user query asks for a line chart showing the number of movies released each year, with a separate line for each genre. This indicates a 'trend' intent, as the focus is on observing how the number of movie releases changes over time. The 'Year' column provides the temporal aspect needed for the x-axis, while the 'Genre' column allows for differentiation of lines by genre, showing trends within each genre over the years."
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Title",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year",
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "line"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "y": {
+          "field": "Title",
+          "type": "quantitative",
+          "aggregate": "count",
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal",
+          "aggregate": null,
+          "bin": null,
+          "timeUnit": null,
+          "legend": null,
+          "sort": null,
+          "scale": null,
+          "axis": null,
+          "tooltip": null
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Genre",
+            "type": "nominal",
+            "aggregate": null,
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          },
+          {
+            "field": "Title",
+            "type": "quantitative",
+            "aggregate": "count",
+            "bin": null,
+            "timeUnit": null,
+            "legend": null,
+            "sort": null,
+            "scale": null,
+            "axis": null,
+            "tooltip": null
+          }
+        ]
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal"
+          },
+          "y": {
+            "field": "Title",
+            "type": "quantitative",
+            "aggregate": "count"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "temporal"
+            },
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Title",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        },
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        }
+      },
+      "final_spec": {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "quantitative",
+            "axis": {
+              "format": "d"
+            }
+          },
+          "y": {
+            "field": "Title",
+            "type": "quantitative",
+            "aggregate": "count"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "quantitative",
+              "format": "d"
+            },
+            {
+              "field": "Genre",
+              "type": "nominal"
+            },
+            {
+              "field": "Title",
+              "type": "quantitative",
+              "aggregate": "count"
+            }
+          ]
+        }
+      },
+      "sort": {}
+    }
+  }
+}
