@@ -1,0 +1,749 @@
+{
+  "Q1": {
+    "step1": {
+      "selected_columns": [
+        "Genre"
+      ],
+      "column_roles": {
+        "Genre": "categorical"
+      }
+    },
+    "step2": {
+      "intent": "distribution",
+      "target_columns": [
+        "Genre"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Genre",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "bar"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Title",
+          "aggregate": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal",
+          "sort": {
+            "field": "Title",
+            "op": "count",
+            "order": "ascending"
+          }
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Title",
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": {
+              "field": "Title",
+              "op": "count",
+              "order": "ascending"
+            }
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {
+        "field": "Title",
+        "order": "ascending",
+        "aggregate": "count"
+      }
+    }
+  },
+  "Q2": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Rating"
+      ],
+      "column_roles": {
+        "Year": "temporal",
+        "Rating": "quantitative"
+      }
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Rating"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Rating",
+          "operation": "mean"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "line"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Rating",
+          "aggregate": "mean",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+          },
+          "y": {
+            "field": "Rating",
+            "aggregate": "mean",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {
+        "field": "Year",
+        "order": "ascending"
+      }
+    }
+  },
+  "Q3": {
+    "step1": {
+      "selected_columns": [
+        "Runtime (Minutes)",
+        "Rating"
+      ],
+      "column_roles": {
+        "Runtime (Minutes)": "quantitative",
+        "Rating": "quantitative"
+      }
+    },
+    "step2": {
+      "intent": "correlation",
+      "target_columns": [
+        "Runtime (Minutes)",
+        "Rating"
+      ]
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": []
+    },
+    "step4": {
+      "mark": "point"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Runtime (Minutes)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Rating",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Runtime (Minutes)",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {}
+    }
+  },
+  "Q4": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Title"
+      ],
+      "column_roles": {
+        "Year": "temporal",
+        "Title": "categorical"
+      }
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Title"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Title",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "area"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "Title",
+          "aggregate": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "area",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+          },
+          "y": {
+            "field": "Title",
+            "aggregate": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {
+        "field": "Year",
+        "order": "ascending"
+      }
+    }
+  },
+  "Q5": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Year",
+        "Rating"
+      ],
+      "column_roles": {
+        "Genre": "categorical",
+        "Year": "temporal",
+        "Rating": "quantitative"
+      }
+    },
+    "step2": {
+      "intent": "compare",
+      "target_columns": [
+        "Genre",
+        "Year",
+        "Rating"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Rating",
+          "operation": "mean"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre",
+        "Year"
+      ]
+    },
+    "step4": {
+      "mark": "rect"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "color": {
+          "field": "Rating",
+          "aggregate": "mean",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "rect",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+          },
+          "color": {
+            "field": "Rating",
+            "aggregate": "mean",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {}
+    }
+  },
+  "Q6": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Title"
+      ],
+      "column_roles": {
+        "Genre": "categorical",
+        "Title": "categorical"
+      }
+    },
+    "step2": {
+      "intent": "compare",
+      "target_columns": [
+        "Genre",
+        "Title"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Title",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "arc"
+    },
+    "step5": {
+      "encodings": {
+        "theta": {
+          "field": "Title",
+          "aggregate": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": {
+          "type": "arc"
+        },
+        "encoding": {
+          "theta": {
+            "field": "Title",
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {}
+    }
+  },
+  "Q7": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Rating"
+      ],
+      "column_roles": {
+        "Genre": "categorical",
+        "Rating": "quantitative"
+      }
+    },
+    "step2": {
+      "intent": "distribution",
+      "target_columns": [
+        "Rating",
+        "Genre"
+      ]
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "boxplot"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Rating",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": {
+          "type": "boxplot"
+        },
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Rating",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {}
+    }
+  },
+  "Q8": {
+    "step1": {
+      "selected_columns": [
+        "Genre",
+        "Revenue (Millions)",
+        "Year"
+      ],
+      "column_roles": {
+        "Genre": "categorical",
+        "Revenue (Millions)": "quantitative",
+        "Year": "temporal"
+      }
+    },
+    "step2": {
+      "intent": "rank",
+      "target_columns": [
+        "Genre",
+        "Revenue (Millions)"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Revenue (Millions)",
+          "operation": "sum"
+        }
+      ],
+      "filters": [
+        {
+          "column": "Year",
+          "operator": ">",
+          "value": 2000
+        }
+      ],
+      "group_by": [
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "bar"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal",
+          "sort": {
+            "field": "Revenue (Millions)",
+            "op": "sum",
+            "order": "descending"
+          }
+        },
+        "y": {
+          "field": "Revenue (Millions)",
+          "aggregate": "sum",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "transform": [
+          {
+            "filter": "datum.Year > 2000"
+          }
+        ],
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Genre",
+            "type": "nominal",
+            "sort": {
+              "field": "Revenue (Millions)",
+              "op": "sum",
+              "order": "descending"
+            }
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "aggregate": "sum",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {
+        "field": "Revenue (Millions)",
+        "order": "descending",
+        "aggregate": "sum"
+      }
+    }
+  },
+  "Q9": {
+    "step1": {
+      "selected_columns": [
+        "Rating",
+        "Revenue (Millions)"
+      ],
+      "column_roles": {
+        "Rating": "quantitative",
+        "Revenue (Millions)": "quantitative"
+      }
+    },
+    "step2": {
+      "intent": "correlation",
+      "target_columns": [
+        "Rating",
+        "Revenue (Millions)"
+      ]
+    },
+    "step3": {
+      "aggregations": [],
+      "filters": [],
+      "group_by": []
+    },
+    "step4": {
+      "mark": "point"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Rating",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Revenue (Millions)",
+          "type": "quantitative"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Rating",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Revenue (Millions)",
+            "type": "quantitative"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {}
+    }
+  },
+  "Q10": {
+    "step1": {
+      "selected_columns": [
+        "Year",
+        "Genre",
+        "Title"
+      ],
+      "column_roles": {
+        "Year": "temporal",
+        "Genre": "categorical",
+        "Title": "categorical"
+      }
+    },
+    "step2": {
+      "intent": "trend",
+      "target_columns": [
+        "Year",
+        "Genre",
+        "Title"
+      ]
+    },
+    "step3": {
+      "aggregations": [
+        {
+          "column": "Title",
+          "operation": "count"
+        }
+      ],
+      "filters": [],
+      "group_by": [
+        "Year",
+        "Genre"
+      ]
+    },
+    "step4": {
+      "mark": "line"
+    },
+    "step5": {
+      "encodings": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "Title",
+          "aggregate": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    "step6": {
+      "vl_spec_draft": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+          "name": "DATA_PLACEHOLDER"
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+          },
+          "y": {
+            "field": "Title",
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Genre",
+            "type": "nominal"
+          }
+        }
+      },
+      "warnings": [],
+      "sort": {
+        "field": "Year",
+        "order": "ascending"
+      }
+    }
+  }
+}
