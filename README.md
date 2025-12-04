@@ -164,7 +164,7 @@ VisGenAIGroup7/
 │   │   │   ├─ openai_client.py  # GPT-5
 │   │   │   └─ groq_client.py    # Groq API
 │   │   └─ vega/
-│   │       └─ spec_builder.py  # 把 6 步结果拼成 Vega-Lite spec
+│   │       └─ spec_builder.py  # from the 6 steps into Vega-Lite spec
 │   └─ shared/
 │       └─ schemas.py           # Pydantic data modal：StepResult, PipelineState 等
 ├─ venv                         # virture environment
