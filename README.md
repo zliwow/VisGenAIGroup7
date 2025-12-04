@@ -139,25 +139,25 @@ streamlit run src/frontend/app.py
 
 ```text
 VisGenAIGroup7/
-├─ README.md                # 面向所有人：这是啥、怎么跑、一个图解释架构
-├─ AGENTS.md                # 面向 Copilot/Codex：多 Agent 分工说明（角色定义 + 项目结构指南）
+├─ README.md                # Facing all audience
+├─ AGENTS.md                # Facing Copilot/Codex
 ├─ .github/
-│   └─ copilot-instructions.md  # 全局 coding 约束和上下文（强制行为规范 + 代码风格规则）
+│   └─ copilot-instructions.md  # Overall coding structure and context
 ├─ docs/
-│   ├─ 01_project_overview.md   # 问题、目标、术语
-│   ├─ 02_requirements.md       # 项目需求 / 范围 / 非目标
-│   ├─ 03_architecture.md       # 技术架构 & 模块划分
-│   ├─ 04_pipeline_design.md    # 6 步 Prompt-to-Vis pipeline 明细
-│   ├─ 05_ui_design.md          # UI mockups & 交互说明（回应 Enrico 的 comment）
-│   └─ 06_prompts.md            # 每一步的 LLM prompt 模板
+│   ├─ 01_project_overview.md   # Question, objective
+│   ├─ 02_requirements.md       # Project requirement
+│   ├─ 03_architecture.md       # Technical structure
+│   ├─ 04_pipeline_design.md    # 6 step Prompt-to-Vis pipeline
+│   ├─ 05_ui_design.md          # UI mockups & UI explanation
+│   └─ 06_prompts.md            # Step to step LLM prompt sample
 ├─ src/
 │   ├─ frontend/
-│   │   ├─ app.py               # Streamlit 入口
-│   │   └─ components/          # TableView / ChartView / StepsPanel 等
+│   │   ├─ app.py               # Streamlit access
+│   │   └─ components/          # TableView / ChartView / StepsPanel 
 │   ├─ backend/
 │   │   ├─ pipeline/
-│   │   │   ├─ steps.py         # 6 个步骤的 schema & 常量
-│   │   │   ├─ workflow.py      # 用 LangChain/LangGraph 串联的 pipeline
+│   │   │   ├─ steps.py         # 6 step scheme
+│   │   │   ├─ workflow.py      # LangChain/LangGraph pipeline
 │   │   ├─ llm/
 │   │   │   ├─ base_client.py    # 定义统一接口（抽象类）
 │   │   │   ├─ prompt_loader.py  # 从 docs 加载 prompt
