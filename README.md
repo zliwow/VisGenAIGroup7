@@ -159,21 +159,21 @@ VisGenAIGroup7/
 │   │   │   ├─ steps.py         # 6 step scheme
 │   │   │   ├─ workflow.py      # LangChain/LangGraph pipeline
 │   │   ├─ llm/
-│   │   │   ├─ base_client.py    # 定义统一接口（抽象类）
-│   │   │   ├─ prompt_loader.py  # 从 docs 加载 prompt
-│   │   │   ├─ openai_client.py  # 调用 GPT-5 的封装
-│   │   │   └─ groq_client.py    # 调用 Groq API 的封装
+│   │   │   ├─ base_client.py    # define and standardize
+│   │   │   ├─ prompt_loader.py  # load prompt from doc
+│   │   │   ├─ openai_client.py  # GPT-5
+│   │   │   └─ groq_client.py    # Groq API
 │   │   └─ vega/
 │   │       └─ spec_builder.py  # 把 6 步结果拼成 Vega-Lite spec
 │   └─ shared/
-│       └─ schemas.py           # Pydantic 数据模型：StepResult, PipelineState 等
-├─ venv                         # 虚拟环境
-├─ requirements.txt             # Python 依赖
+│       └─ schemas.py           # Pydantic data modal：StepResult, PipelineState 等
+├─ venv                         # virture environment
+├─ requirements.txt             # Python reliance
 ├─ .streamlit/
-│   └─ secrets.toml.example     # API key 示例
+│   └─ secrets.toml.example     # API key demo
 ├─ .gitignore
 └─ tests/
-    └─ test_pipeline.py         # 对 pipeline 的基础单测
+    └─ test_pipeline.py         # basic testing of pipelines
 
 ```
 
